@@ -1,10 +1,7 @@
 <?php
 class FizzBuzz{
-  function __construct($number){
-    $this->number = $number;
-  }
-  function count(){
-    if($this->number == 1){
+  function count($number){
+    if($number == 1){
       return "1";
     }
     return "2";
@@ -13,12 +10,12 @@ class FizzBuzz{
 class FizzBuzzTest extends PHPUnit_Framework_TestCase
 {
   function testFizzBuzzShouldBeTwo(){
-    $fizzbuzz = new FizzBuzz(2);
-    $this->assertEquals('2',$fizzbuzz->count());
+    $fizzbuzz = new FizzBuzz();
+    $this->assertEquals('2',$fizzbuzz->count(2));
   }
   function testFizzBuzzShouldBeOne(){
-    $fizzbuzz = new FizzBuzz(1);
-    $this->assertEquals('1',$fizzbuzz->count());
+    $fizzbuzz = new FizzBuzz();
+    $this->assertEquals('1',$fizzbuzz->count(1));
   }
 }
 ?>
