@@ -1,8 +1,15 @@
 <?php
 class FizzBuzz{
   function count($number){
-    $_FIZZBUZZ_TEXT = [1=>"1",2=>"2",3=>"Fizz",4=>"4",5=>"Buzz",6=>"Fizz",7=>"7",8=>"8",9=>"Fizz",10=>"Buzz",11=>"11",12=>"Fizz",13=>"13",14=>"14",15=>"FizzBuzz"];
-    return $_FIZZBUZZ_TEXT[$number];
+    if($number%3 == 0 && $number%5 == 0){
+      return "FizzBuzz";
+    }else if($number%3 == 0){
+      return "Fizz";
+    }else if($number%5 == 0){
+      return "Buzz";
+    }else{
+        return $number;
+    }
   }
 }
 class FizzBuzzTest extends PHPUnit_Framework_TestCase
