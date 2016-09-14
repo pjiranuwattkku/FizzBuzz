@@ -1,13 +1,18 @@
 <?php
 class FizzBuzz{
   function count($number){
-    $_FIZZBUZZ_TEXT = [1=>"1",2=>"2",3=>"Fizz",4=>"4",5=>"Buzz",6=>"Fizz",7=>"7",8=>"8",9=>"Fizz"];
+    $_FIZZBUZZ_TEXT = [1=>"1",2=>"2",3=>"Fizz",4=>"4",5=>"Buzz",6=>"Fizz",7=>"7",8=>"8",9=>"Fizz",10=>"Buzz"];
     return $_FIZZBUZZ_TEXT[$number];
   }
 }
 class FizzBuzzTest extends PHPUnit_Framework_TestCase
 {
-  function testFizzBuzzNineShouldBeNine(){
+  function testFizzBuzzTenShouldBeBuzz(){
+    $fizzbuzz = new FizzBuzz();
+    $this->assertEquals("Buzz",$fizzbuzz->count(10));
+  }
+
+  function testFizzBuzzNineShouldBeFizz(){
     $fizzbuzz = new FizzBuzz();
     $this->assertEquals("Fizz",$fizzbuzz->count(9));
   }
